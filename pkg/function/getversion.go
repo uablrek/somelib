@@ -2,7 +2,7 @@ package function
 
 
 func GetVersion() string {
-	return "v1.1.0"
+	return "v2.0.0"
 }
 
 func NewFunc() string {

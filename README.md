@@ -24,6 +24,11 @@ func main() {
 }
 ```
 
+This might be needed to build;
+```
+export GONOSUMDB=github.com/uablrek/somelib
+```
+
 ## Module path
 
 In the [module-path](https://golang.org/ref/mod#module-path) it is
@@ -34,5 +39,27 @@ said about the major version suffix, e.g. `v2`;
 In this example I choose to *not* have the suffix in any path.
 
 
-## v1.0.0
+## v1.0.x
 
+```
+ver=v1.0.0
+git tag $ver
+git push origin $ver
+```
+
+In the app do;
+```
+go get -u github.com/uablrek/somelib
+# Or
+go get -u github.com/uablrek/somelib@v1.1.0
+```
+
+## v2.0.x
+
+This is the tricky part.
+
+Append the version suffix in `go.mod`;
+
+```
+module github.com/uablrek/somelib/v2
+```
