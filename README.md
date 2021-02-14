@@ -51,6 +51,8 @@ In the app do;
 ```
 go get -u github.com/uablrek/somelib
 # Or
+go get -u github.com/uablrek/somelib@v1.0.0
+# Or
 go get -u github.com/uablrek/somelib@v1.1.0
 ```
 
@@ -63,3 +65,18 @@ Append the version suffix in `go.mod`;
 ```
 module github.com/uablrek/somelib/v2
 ```
+
+Make a new major release;
+```
+ver=v2.0.0
+git tag $ver
+git push origin $ver
+```
+
+In the app import the `v2` version;
+```go
+import "github.com/uablrek/somelib/v2/pkg/function"
+```
+
+And do `go mod tidy` or just build.
+
